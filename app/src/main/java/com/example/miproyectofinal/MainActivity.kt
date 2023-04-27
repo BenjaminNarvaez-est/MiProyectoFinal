@@ -11,7 +11,7 @@ import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.roomwordssample.NewRepoActivity
-import com.example.android.roomwordssample.R
+import com.example.android.roomwordssample.s
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton
