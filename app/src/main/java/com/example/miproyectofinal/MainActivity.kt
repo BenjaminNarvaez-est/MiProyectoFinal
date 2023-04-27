@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.roomwordssample.NewRepoActivity
 import com.example.android.roomwordssample.R
 
 
@@ -27,13 +28,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
-        val adapter = WordListAdapter()
+        val adapter = RepoListAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val fab = findViewById<FloatingActionButton>(R.id.fab)
         fab.setOnClickListener {
-            val intent = Intent(this@MainActivity, NewWordActivity::class.java)
+            val intent = Intent(this@MainActivity, NewRepoActivity::class.java)
             startActivityForResult(intent, newWordActivityRequestCode)
         }
 
@@ -49,8 +50,8 @@ class MainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, intentData)
 
         if (requestCode == newWordActivityRequestCode && resultCode == RESULT_OK) {
-            intentData?.getStringExtra(NewWordActivity.EXTRA_REPLY)?.let { reply ->
-                val word = Word(reply)
+            intentData?.getStringExtra(NewRepoActivity.EXTRA_REPLY)?.let { reply ->
+                val word = Repo(reply)
                 wordViewModel.insert(word)
             }
         } else {

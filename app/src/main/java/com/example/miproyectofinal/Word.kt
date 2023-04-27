@@ -1,6 +1,6 @@
 
 
-package com.example.android.roomwordssample
+package com.example.android.miproyectofinal
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
